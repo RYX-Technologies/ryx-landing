@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pilot & Access Forms</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+      background: #f7f7f7;
+      color: #333;
+    }
+
+    h2 {
+      margin-top: 40px;
+    }
+
+    form {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 400px;
+      margin-bottom: 40px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    input, textarea, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    button {
+      background: #4a4aff;
+      color: white;
+      border: none;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+
+    button:hover {
+      background: #3333ff;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Pilot & Access Signup</h1>
+  <p>This page contains both forms connected to Formspree.</p>
+
+  <!-- PILOT FORM -->
+  <h2>Join the Pilot Program</h2>
+  <form action="https://formspree.io/f/mlgokdlr" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="email" name="email" placeholder="Email Address" required />
+
+    <!-- Identifies which form was submitted -->
+    <input type="hidden" name="form_type" value="pilot" />
+
+    <button type="submit">Join Pilot</button>
+  </form>
+
+  <!-- GET ACCESS FORM -->
+  <h2>Get Early Access</h2>
+  <form action="https://formspree.io/f/mlgokdlr" method="POST">
+    <input type="email" name="email" placeholder="Email Address" required />
+
+    <!-- Identifies which form was submitted -->
+    <input type="hidden" name="form_type" value="access" />
+
+    <button type="submit">Get Access</button>
+  </form>
+
+</body>
+</html>
