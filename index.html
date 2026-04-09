@@ -253,8 +253,8 @@
             <strong>Thank you for your interest in RYX.</strong>
             We've received your application and will be in touch shortly. Keep an eye on your inbox — we look forward to connecting with you.
           </div>
-          <form id="pilot-form" action="https://formspree.io/f/YOUR_PILOT_FORM_ID" method="POST">
-            <input type="hidden" name="_subject" value="New RYX Pilot Program Application" />
+          <form id="pilot-form" name="pilot-program" method="POST" data-netlify="true">
+            <input type="hidden" name="form-name" value="pilot-program" />
             <div class="form-row">
               <label class="form-label">Full name</label>
               <input class="form-input" type="text" name="name" placeholder="Your name" required />
@@ -294,8 +294,8 @@
             <strong>Thank you for reaching out to RYX.</strong>
             Your request has been received. We'll review your information and follow up soon. We appreciate your interest in building with us.
           </div>
-          <form id="partner-form" action="https://formspree.io/f/YOUR_PARTNER_FORM_ID" method="POST">
-            <input type="hidden" name="_subject" value="New RYX Partner / Access Request" />
+          <form id="partner-form" name="partner-access" method="POST" data-netlify="true">
+            <input type="hidden" name="form-name" value="partner-access" />
             <div class="form-row">
               <label class="form-label">Full name</label>
               <input class="form-input" type="text" name="name" placeholder="Your name" required />
@@ -380,12 +380,12 @@
         } else {
           btn.textContent = orig;
           btn.disabled = false;
-          alert('Something went wrong. Please try again or email contact@ryx.io');
+          alert('Something went wrong. Please try again or email contact@josproductions.com');
         }
       } catch(err) {
         btn.textContent = orig;
         btn.disabled = false;
-        alert('Something went wrong. Please try again or email contact@ryx.io');
+        alert('Something went wrong. Please try again or email contact@josproductions.com');
       }
     });
   }
