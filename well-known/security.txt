@@ -1,5 +1,0 @@
-Contact: mailto:systems@r-yx.tech
-Expires: 2027-04-30T23:59:00Z
-Preferred-Languages: en
-Policy: https://r-yx.tech/security.html
-Canonical: https://r-yx.tech/.well-known/security.txt
