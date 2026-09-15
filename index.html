@@ -70,7 +70,9 @@
     .founder-text { font-size: 14px; color: var(--text-muted); margin-bottom: 10px; }
     .founder-name { margin-top: 16px; font-size: 15px; font-weight: 600; color: var(--text-main); }
     .founder-role { font-size: 12px; color: var(--text-muted); }
-    .form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 24px; }
+    .badge-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
+    .badge { font-size: 11px; font-weight: 600; letter-spacing: 0.04em; color: var(--accent-gold); border: 1px solid rgba(201,160,46,0.35); background: rgba(201,160,46,0.08); border-radius: 999px; padding: 6px 14px; }
+    .form-grid { display: grid; grid-template-columns: minmax(280px, 480px); justify-content: center; gap: 40px; margin-top: 24px; }
     .form-block { display: flex; flex-direction: column; gap: 12px; }
     .form-block-title { font-size: 15px; font-weight: 600; margin-bottom: 2px; }
     .form-block-desc { font-size: 12px; color: var(--text-muted); margin-bottom: 8px; }
@@ -83,10 +85,6 @@
     .form-submit { background: var(--accent); color: #000; border: none; border-radius: 999px; padding: 12px 28px; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.18s; align-self: flex-start; }
     .form-submit:hover { filter: brightness(1.05); transform: translateY(-1px); }
     .form-submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
-    .form-submit-gold { background: transparent; border: 1px solid var(--accent-gold); color: var(--accent-gold); border-radius: 999px; padding: 12px 28px; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.18s; align-self: flex-start; }
-    .form-submit-gold:hover { background: rgba(201,160,46,0.08); transform: translateY(-1px); }
-    .form-submit-gold:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
-    .form-divider { width: 1px; background: rgba(255,255,255,0.06); }
     .success-msg { display: none; background: rgba(0,212,255,0.08); border: 1px solid rgba(0,212,255,0.2); border-radius: 10px; padding: 20px 24px; font-size: 14px; color: var(--accent); line-height: 1.7; }
     .success-msg strong { display: block; margin-bottom: 6px; font-size: 16px; }
     footer { margin-top: 40px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.06); font-size: 12px; color: var(--text-muted); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
@@ -97,7 +95,6 @@
       .hero { padding: 64px 0 72px; }
       section { padding: 24px 18px; }
       .traction-bar { gap: 20px; }
-      .form-divider { display: none; }
     }
   </style>
 </head>
@@ -109,6 +106,7 @@
     <nav class="nav">
       <a href="#mission">Mission</a>
       <a href="#technology">Technology</a>
+      <a href="#builtfor">Built For</a>
       <a href="#impact">Impact</a>
       <a href="#founder">Founder</a>
       <a href="#connect">Connect</a>
@@ -122,14 +120,14 @@
 
     <section class="hero" id="top">
       <div class="hero-inner">
-        <div class="hero-kicker">Digital infrastructure for the Caribbean</div>
+        <div class="hero-kicker">Digital Infrastructure &amp; Consulting for the Caribbean</div>
         <h1 class="hero-title">RYX</h1>
         <div class="hero-sub">The Caribbean Grid</div>
         <div class="hero-explainer">Digital infrastructure built for the Caribbean region</div>
         <p class="hero-desc">Building the digital backbone that connects the Caribbean — faster, more resilient, and built for the region's future.</p>
         <div class="hero-ctas">
-          <a href="#connect" class="btn btn-primary">Join The Program</a>
-          <a href="#connect" class="btn btn-secondary">Request Demo</a>
+          <a href="#connect" class="btn btn-primary">Schedule a Consultation</a>
+          <a href="#mission" class="btn btn-secondary">Our Approach</a>
         </div>
       </div>
     </section>
@@ -152,6 +150,10 @@
         <div class="traction-value">Cloud-Native</div>
       </div>
       <div class="traction-item">
+        <div class="traction-label">Certification</div>
+        <div class="traction-value">WOSB</div>
+      </div>
+      <div class="traction-item">
         <div class="traction-label">Partnerships</div>
         <div class="traction-value">Available</div>
       </div>
@@ -164,47 +166,69 @@
         <p class="section-desc">The Caribbean region deserves world-class digital infrastructure. RYX is building the foundation that enables Caribbean nations, businesses, and communities to access, build, and own their digital future — on their own terms, at global standards.</p>
       </div>
     </section>
-<section id="product">
-  <div class="section-header">
-    <div class="section-kicker">Product</div>
-    <h2 class="section-title">Introducing RYX Automate</h2>
-    <p class="section-desc">
-      RYX is developing a cloud‑native automation platform designed to help Caribbean organizations streamline internal operations, integrate data sources, and deploy intelligent workflows without custom engineering.
-    </p>
-  </div>
 
-  <div class="built-grid">
-    <div class="built-card">
-      <div class="built-title">Workflow Automation</div>
-      <div class="built-text">
-        Build and run automated workflows that reduce manual tasks and improve operational efficiency.
+    <section id="product">
+      <div class="section-header">
+        <div class="section-kicker">Product</div>
+        <h2 class="section-title">Introducing RYX Automate</h2>
+        <p class="section-desc">
+          RYX is developing a cloud‑native automation platform designed to help Caribbean organizations streamline internal operations, integrate data sources, and deploy intelligent workflows without custom engineering.
+        </p>
       </div>
-    </div>
 
-    <div class="built-card">
-      <div class="built-title">Data Integration</div>
-      <div class="built-text">
-        Connect internal systems and unify data flows using a secure, cloud‑native orchestration layer.
+      <div class="built-grid">
+        <div class="built-card">
+          <div class="built-title">Workflow Automation</div>
+          <div class="built-text">
+            Build and run automated workflows that reduce manual tasks and improve operational efficiency.
+          </div>
+        </div>
+
+        <div class="built-card">
+          <div class="built-title">Data Integration</div>
+          <div class="built-text">
+            Connect internal systems and unify data flows using a secure, cloud‑native orchestration layer.
+          </div>
+        </div>
+
+        <div class="built-card">
+          <div class="built-title">AI‑Driven Insights</div>
+          <div class="built-text">
+            Use lightweight AI models to trigger actions, classify information, and support decision‑making.
+          </div>
+        </div>
       </div>
-    </div>
 
-    <div class="built-card">
-      <div class="built-title">AI‑Driven Insights</div>
-      <div class="built-text">
-        Use lightweight AI models to trigger actions, classify information, and support decision‑making.
+      <p style="font-size: 13px; color: var(--text-muted); margin-top: 20px;">
+        RYX Automate is available to select government agencies, enterprises, and regional partners through direct engagement.
+      </p>
+    </section>
+
+    <section id="technology">
+      <div class="section-header">
+        <div class="section-kicker">Technology</div>
+        <h2 class="section-title">Built on a secure, standards-based foundation</h2>
+        <p class="section-desc">RYX infrastructure is designed to meet the standards enterprises and government agencies expect — without compromising on speed or flexibility.</p>
       </div>
-    </div>
-  </div>
-
-  <p style="font-size: 13px; color: var(--text-muted); margin-top: 20px;">
-    RYX Automate is currently in private beta, with early access available for select partners and organizations across the Caribbean region & its Diaspora.
-  </p>
-</section>
-<section id="technology">
-  <div class="section-header">
-  </p>
-</section>
-
+      <div class="tech-grid">
+        <div class="tech-card">
+          <div class="tech-provider">Cloud-Native Architecture</div>
+          <div class="tech-services">Scalable, resilient systems built for the demands of regional and multi-site operations.</div>
+        </div>
+        <div class="tech-card">
+          <div class="tech-provider">Data Security &amp; Sovereignty</div>
+          <div class="tech-services">Localized data handling practices designed with regional ownership and control in mind.</div>
+        </div>
+        <div class="tech-card">
+          <div class="tech-provider">Compliance-Ready</div>
+          <div class="tech-services">Architected to support the procurement and security requirements of public sector engagements.</div>
+        </div>
+        <div class="tech-card">
+          <div class="tech-provider">API-First Integration</div>
+          <div class="tech-services">Connects with existing systems and data sources without disrupting current operations.</div>
+        </div>
+      </div>
+    </section>
 
     <section id="builtfor">
       <div class="section-header">
@@ -244,34 +268,34 @@
       </div>
     </section>
 
-    <section id="About Us">
+    <section id="founder">
       <div class="section-header">
         <div class="section-kicker">Founder</div>
-        <h2 class="section-title">A founder committed to transforming the Caribbean’s digital future</h2>
+        <h2 class="section-title">A founder committed to transforming the Caribbean's digital future</h2>
       </div>
-      <p class="founder-text">Recognizing the region's global impact deserves matching technological capabilities, I founded RYX Technologies to modernize the Caribbean’s digital infrastructure, to empower businesses and public institutions to operate with speed and sovereignty.</p>
-  Latoya, Founder & CEO, RYX — <a href="https://www.linkedin.com/in/josproductions-064112323" style="color: var(--accent);">LinkedIn</a>
-</div>
+      <p class="founder-text">Recognizing the region's global impact deserves matching technological capabilities, I founded RYX Technologies to modernize the Caribbean's digital infrastructure, to empower businesses and public institutions to operate with speed and sovereignty.</p>
+      <div class="founder-name">Latoya, Founder &amp; CEO, RYX — <a href="https://www.linkedin.com/in/josproductions-064112323" style="color: var(--accent);">LinkedIn</a></div>
+      <div class="badge-row">
+        <span class="badge">SBA-Certified Woman-Owned Small Business (WOSB)</span>
+        <span class="badge">Government Contract Ready</span>
+      </div>
     </section>
 
     <section id="connect">
       <div class="section-header">
         <div class="section-kicker">Connect</div>
-        <h2 class="section-title">Be part of the Caribbean's digital future</h2>
-        <p class="section-desc">We're assembling partners, operators, and early adopters who care about building a stronger Caribbean. Tell us who you are and how you'd like to get involved.</p>
+        <h2 class="section-title">Start a Conversation</h2>
+        <p class="section-desc">Government agencies, enterprises, and regional organizations — tell us about your objectives and we'll follow up to schedule a consultation.</p>
       </div>
 
       <div class="form-grid">
-
         <div class="form-block">
-          <div class="form-block-title" style="color: var(--accent);">Join Our Program</div>
-          <div class="form-block-desc">For Caribbean operators, enterprises, and regional organizations interested in early access to RYX infrastructure.</div>
-          <div id="pilot-success" class="success-msg">
-            <strong>Thank you for your interest in RYX.</strong>
-            We've received your application and will be in touch shortly. Keep an eye on your inbox — we look forward to connecting with you.
+          <div id="contact-success" class="success-msg">
+            <strong>Thank you for reaching out to RYX.</strong>
+            We've received your message and will follow up shortly to schedule a consultation.
           </div>
-          <form id="pilot-form" name="pilot-program" method="POST" data-netlify="true">
-            <input type="hidden" name="form-name" value="pilot-program" />
+          <form id="contact-form" name="contact" method="POST" data-netlify="true">
+            <input type="hidden" name="form-name" value="contact" />
             <div class="form-row">
               <label class="form-label">Full name</label>
               <input class="form-input" type="text" name="name" placeholder="Your name" required />
@@ -285,65 +309,23 @@
               <input class="form-input" type="text" name="organization" placeholder="Company or organization name" required />
             </div>
             <div class="form-row">
-              <label class="form-label">Organization type</label>
+              <label class="form-label">I'm reaching out as a...</label>
               <select class="form-select" name="org_type">
                 <option value="">Select one</option>
-                <option value="operator">Caribbean Network Operator</option>
                 <option value="government">Government / Public Agency</option>
                 <option value="enterprise">Enterprise Business</option>
+                <option value="operator">Telecom / Network Operator</option>
+                <option value="partner">Investor / Partner</option>
                 <option value="other">Other</option>
               </select>
             </div>
             <div class="form-row">
-              <label class="form-label">What brings you to RYX?</label>
-              <textarea class="form-textarea" name="message" placeholder="Tell us about your interest in the pilot program..."></textarea>
+              <label class="form-label">How can we help?</label>
+              <textarea class="form-textarea" name="message" placeholder="Tell us about your objectives..."></textarea>
             </div>
-            <button type="submit" class="form-submit">Apply for Access</button>
+            <button type="submit" class="form-submit">Start the Conversation</button>
           </form>
         </div>
-
-        <div class="form-divider"></div>
-
-        <div class="form-block">
-          <div class="form-block-title" style="color: var(--accent-gold);">Request Access</div>
-          <div class="form-block-desc">For cloud providers, technology partners, and investors interested in the RYX infrastructure roadmap.</div>
-          <div id="partner-success" class="success-msg">
-            <strong>Thank you for reaching out to RYX.</strong>
-            Your request has been received. We'll review your information and follow up soon. We appreciate your interest in building with us.
-          </div>
-          <form id="partner-form" name="partner-access" method="POST" data-netlify="true">
-            <input type="hidden" name="form-name" value="partner-access" />
-            <div class="form-row">
-              <label class="form-label">Full name</label>
-              <input class="form-input" type="text" name="name" placeholder="Your name" required />
-            </div>
-            <div class="form-row">
-              <label class="form-label">Work email</label>
-              <input class="form-input" type="email" name="email" placeholder="you@company.com" required />
-            </div>
-            <div class="form-row">
-              <label class="form-label">Organization</label>
-              <input class="form-input" type="text" name="organization" placeholder="Company name" required />
-            </div>
-            <div class="form-row">
-              <label class="form-label">Partnership type</label>
-              <select class="form-select" name="partner_type">
-                <option value="">Select one</option>
-                <option value="cloud">Cloud Provider</option>
-                <option value="technology">Technology Partner</option>
-                <option value="investor">Investor</option>
-                <option value="reseller">Reseller / Distributor</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-            <div class="form-row">
-              <label class="form-label">How would you like to work together?</label>
-              <textarea class="form-textarea" name="message" placeholder="Describe your interest in partnering with RYX..."></textarea>
-            </div>
-            <button type="submit" class="form-submit-gold">Request Access</button>
-          </form>
-        </div>
-
       </div>
     </section>
 
@@ -407,8 +389,7 @@
     });
   }
 
-  handleForm('pilot-form', 'pilot-success');
-  handleForm('partner-form', 'partner-success');
+  handleForm('contact-form', 'contact-success');
 </script>
 
 </body>
