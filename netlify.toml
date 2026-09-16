@@ -1,3 +1,5 @@
+[build]
+  publish = "."
 [[redirects]]
   from = "/.well-known/security.txt"
   to = "/.well-known/security.txt"
