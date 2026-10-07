@@ -43,7 +43,9 @@
     a { color: inherit; text-decoration: none; }
     .page { max-width: 1120px; margin: 0 auto; padding: 32px 16px 64px; }
     header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; gap: 16px; flex-wrap: wrap; }
-    .logo { font-weight: 800; letter-spacing: 0.12em; font-size: 18px; }
+    .logo { display: inline-flex; align-items: center; line-height: 0; }
+    .emblem { width: 48px; height: 48px; display: block; }
+    .hero-emblem { width: 110px; height: 110px; display: block; margin: 0 auto 12px; }
     .nav { display: flex; gap: 20px; font-size: 14px; color: var(--text-muted); flex-wrap: wrap; }
     .nav a:hover { color: var(--accent); }
     .hero { padding: 80px 0 96px; text-align: center; background: radial-gradient(circle at top, #12345a 0, #03101f 55%, #020812 100%); border-radius: 24px; position: relative; overflow: hidden; }
@@ -122,10 +124,49 @@
   </style>
 </head>
 <body>
+
+<!-- RYX emblem (defined once, reused in header and hero) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <radialGradient id="ryxGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#2fd0d0" stop-opacity="0.75" />
+      <stop offset="100%" stop-color="#1f7f8c" stop-opacity="0.35" />
+    </radialGradient>
+    <linearGradient id="ryxSpikeV" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7fe6ee" stop-opacity="0.9" />
+      <stop offset="50%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#5b8def" stop-opacity="0.8" />
+    </linearGradient>
+    <linearGradient id="ryxSpikeH" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7fe6ee" stop-opacity="0.8" />
+      <stop offset="50%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#5b8def" stop-opacity="0.8" />
+    </linearGradient>
+    <linearGradient id="ryxOrbit" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#6ea8ff" />
+      <stop offset="100%" stop-color="#8ff0f5" />
+    </linearGradient>
+  </defs>
+  <symbol id="ryx-emblem" viewBox="0 0 200 200">
+    <circle cx="100" cy="100" r="72" fill="url(#ryxGlow)" opacity="0.55" />
+    <circle cx="100" cy="100" r="60" fill="url(#ryxGlow)" opacity="0.7" />
+    <g transform="rotate(-40 100 100)" fill="none" stroke="url(#ryxOrbit)" stroke-width="1.6">
+      <ellipse cx="100" cy="100" rx="74" ry="15" />
+      <ellipse cx="100" cy="100" rx="70" ry="11" opacity="0.8" />
+      <ellipse cx="100" cy="100" rx="66" ry="8" opacity="0.6" />
+    </g>
+    <path d="M100 6 L105.5 100 L100 194 L94.5 100 Z" fill="url(#ryxSpikeV)" />
+    <path d="M6 100 L100 94.5 L194 100 L100 105.5 Z" fill="url(#ryxSpikeH)" />
+    <circle cx="100" cy="100" r="8" fill="#ffffff" />
+  </symbol>
+</svg>
+
 <div class="page">
 
   <header>
-    <div class="logo">RYX TECHNOLOGIES</div>
+    <a class="logo" href="#top" aria-label="RYX Technologies home">
+      <svg class="emblem" role="img" aria-label="RYX Technologies emblem"><use href="#ryx-emblem" /></svg>
+    </a>
     <nav class="nav">
       <a href="#mission">Mission</a>
       <a href="#technology">Technology</a>
@@ -150,6 +191,7 @@
         <path class="flow-line gold" style="animation-duration: 5.5s; animation-delay: -0.6s;" d="M-50,20 C180,80 380,-10 640,70 S940,10 1100,90" />
       </svg>
       <div class="hero-inner">
+        <svg class="hero-emblem" aria-hidden="true"><use href="#ryx-emblem" /></svg>
         <h1 class="hero-title">RYX Technologies</h1>
         <div class="hero-sub">Digital Backbone for the Caribbean &amp; Its Diaspora</div>
         <p class="hero-desc">Empowering the region with the infrastructure and strategic consulting needed to accelerate growth, enhance security, and build for the future.</p>
@@ -307,7 +349,7 @@
       <div class="founder-name">Latoya, Founder &amp; CEO, RYX — <a href="https://www.linkedin.com/in/josproductions-064112323" style="color: var(--accent);">LinkedIn</a></div>
       <div class="badge-row">
         <span class="badge">SBA-Certified Woman-Owned Small Business (WOSB)</span>
-        <span class="badge">Sam.gov Compliant</span>
+        <span class="badge">Government Contract Ready</span>
       </div>
     </section>
 
@@ -371,10 +413,11 @@
     <div class="certifications">
       <h3>Certifications &amp; Compliance</h3>
       <div class="cert-logos">
-        <img src="sba-wosb-logo.svg" alt="SBA WOSB Certified">
-        <img src="e-verify-logo-4-color-cmyk-sm-jpg-3_original.jpg" alt="E-Verify Participant">
-        <img src="sam.webp" alt="SAM.gov Compliant">
+        <img src="sba-wosb-logo.svg" alt="SBA Certified Woman-Owned Small Business (WOSB)">
+        <img src="sam.webp" alt="Registered in SAM.gov">
       </div>
+      <p>SBA-Certified WOSB &bull; Registered in SAM.gov</p>
+    </div>
 
     <div class="footer-links">
       <a href="#top">Back to top</a>
