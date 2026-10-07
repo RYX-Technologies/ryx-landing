@@ -386,6 +386,18 @@
       <strong>RYX Technologies — Connecting the Caribbean &amp; Its Diaspora</strong><br>
       Digital infrastructure built for the Caribbean region.
     </div>
+
+    <!-- Compliance & Certifications -->
+    <div class="certifications">
+      <h3>Certifications & Compliance</h3>
+      <div class="cert-logos">
+        <img src="sba-wosb-logo.svg" alt="SBA WOSB Certified">
+        <img src="e-verify-logo-4-color-cmyk-sm-jpg-3_original.jpg" alt="E-Verify Participant">
+        <img src="sam.webp" alt="SAM.gov Compliant">
+      </div>
+      <p><a href="https://web.sba.gov/pro-net/search/dsp_dsbs.cfm">View full capabilities on SBA DSBS</a></p>
+    </div>
+
     <div class="footer-links">
       <a href="#top">Back to top</a>
       <a href="#technology">Technology</a>
@@ -395,52 +407,8 @@
       <a href="https://r-yx.tech/terms">Terms of Use</a>
       <a href="https://r-yx.tech/security">Report Security Issues</a>
     </div>
+
     <div style="width: 100%; margin-top: 12px; color: var(--text-muted);">
       © 2026 RYX™. All rights reserved.
     </div>
-  </footer>
-
-</div>
-
-<script>
-  function handleForm(formId, successId) {
-    const form = document.getElementById(formId);
-    const success = document.getElementById(successId);
-    if (!form || !success) return;
-
-    form.addEventListener('submit', async function(e) {
-      e.preventDefault();
-      const btn = form.querySelector('button[type="submit"]');
-      const orig = btn.textContent;
-      btn.textContent = 'Sending...';
-      btn.disabled = true;
-
-      try {
-        const data = new FormData(form);
-        const res = await fetch('/', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: new URLSearchParams(data).toString()
-        });
-
-        if (res.ok) {
-          form.style.display = 'none';
-          success.style.display = 'block';
-        } else {
-          btn.textContent = orig;
-          btn.disabled = false;
-          alert('Something went wrong. Please try again or email contact@r-yx.tech');
-        }
-      } catch(err) {
-        btn.textContent = orig;
-        btn.disabled = false;
-        alert('Something went wrong. Please try again or email contact@r-yx.tech');
-      }
-    });
-  }
-
-  handleForm('contact-form', 'contact-success');
-</script>
-
-</body>
-</html>
+</footer>
