@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="google-site-verification" content="googled13a7d5e5ab288a6.html" />
+  <link rel="canonical" href="https://r-yx.tech/" />
 
   <title>RYX Technologies — Caribbean & Diaspora Digital Infrastructure</title>
 
@@ -21,6 +21,18 @@
   <meta name="twitter:description" content="Building the digital infrastructure that connects and empowers the Caribbean region and its diaspora." />
   <meta name="twitter:image" content="https://r-yx.tech/og-image.png" />
 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "RYX Technologies",
+    "url": "https://r-yx.tech/",
+    "logo": "https://r-yx.tech/ryx-logo.png",
+    "description": "Digital infrastructure, automation, and strategic consulting for the Caribbean region and its diaspora."
+  }
+  </script>
+
+  <link rel="icon" type="image/png" sizes="64x64" href="/favicon.png" />
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -45,6 +57,7 @@
     header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; gap: 16px; flex-wrap: wrap; }
     .logo { display: inline-flex; align-items: center; line-height: 0; }
     .emblem { width: 48px; height: 48px; display: block; }
+    .logo-mark { height: 56px; width: auto; display: block; }
     .hero-emblem { width: 110px; height: 110px; display: block; margin: 0 auto 12px; }
     .nav { display: flex; gap: 20px; font-size: 14px; color: var(--text-muted); flex-wrap: wrap; }
     .nav a:hover { color: var(--accent); }
@@ -115,6 +128,13 @@
     .certifications a { color: var(--accent); }
     .certifications a:hover { text-decoration: underline; }
 
+    /* Accessibility */
+    .skip-link { position: absolute; left: 16px; top: -60px; background: var(--accent); color: #000; padding: 10px 16px; border-radius: 8px; font-weight: 600; font-size: 14px; z-index: 100; }
+    .skip-link:focus { top: 12px; }
+    a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+    .hp-field { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+    .form-error { display: none; color: #ffb4b4; font-size: 13px; margin-top: 8px; }
+
     @media (max-width: 720px) {
       header { flex-direction: column; gap: 12px; align-items: flex-start; }
       .hero { padding: 64px 0 72px; }
@@ -161,11 +181,13 @@
   </symbol>
 </svg>
 
+<a class="skip-link" href="#main">Skip to main content</a>
+
 <div class="page">
 
   <header>
     <a class="logo" href="#top" aria-label="RYX Technologies home">
-      <svg class="emblem" role="img" aria-label="RYX Technologies emblem"><use href="#ryx-emblem" /></svg>
+      <img class="logo-mark" src="ryx-monogram.png" alt="RYX Technologies" width="57" height="56" />
     </a>
     <nav class="nav">
       <a href="#mission">Mission</a>
@@ -180,7 +202,7 @@
     </nav>
   </header>
 
-  <main>
+  <main id="main">
 
     <section class="hero" id="top">
       <svg class="hero-lines" viewBox="0 0 1000 400" preserveAspectRatio="none" aria-hidden="true">
@@ -362,27 +384,30 @@
 
       <div class="form-grid">
         <div class="form-block">
-          <div id="contact-success" class="success-msg">
+          <div id="contact-success" class="success-msg" role="status" aria-live="polite">
             <strong>Thank you for reaching out to RYX.</strong>
             We've received your message and will follow up shortly to schedule a consultation.
           </div>
-          <form id="contact-form" name="contact" method="POST" data-netlify="true">
+          <form id="contact-form" name="contact" method="POST" action="/" data-netlify="true" data-netlify-honeypot="bot-field">
             <input type="hidden" name="form-name" value="contact" />
+            <p class="hp-field" aria-hidden="true">
+              <label>Don't fill this out: <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
+            </p>
             <div class="form-row">
-              <label class="form-label">Full name</label>
-              <input class="form-input" type="text" name="name" placeholder="Your name" required />
+              <label class="form-label" for="f-name">Full name</label>
+              <input class="form-input" id="f-name" type="text" name="name" placeholder="Your name" autocomplete="name" required />
             </div>
             <div class="form-row">
-              <label class="form-label">Work email</label>
-              <input class="form-input" type="email" name="email" placeholder="you@company.com" required />
+              <label class="form-label" for="f-email">Work email</label>
+              <input class="form-input" id="f-email" type="email" name="email" placeholder="you@company.com" autocomplete="email" required />
             </div>
             <div class="form-row">
-              <label class="form-label">Organization</label>
-              <input class="form-input" type="text" name="organization" placeholder="Company or organization name" required />
+              <label class="form-label" for="f-org">Organization</label>
+              <input class="form-input" id="f-org" type="text" name="organization" placeholder="Company or organization name" autocomplete="organization" required />
             </div>
             <div class="form-row">
-              <label class="form-label">I'm reaching out as a...</label>
-              <select class="form-select" name="org_type">
+              <label class="form-label" for="f-type">I'm reaching out as a...</label>
+              <select class="form-select" id="f-type" name="org_type">
                 <option value="">Select one</option>
                 <option value="government">Government / Public Agency</option>
                 <option value="enterprise">Enterprise Business</option>
@@ -392,10 +417,11 @@
               </select>
             </div>
             <div class="form-row">
-              <label class="form-label">How can we help?</label>
-              <textarea class="form-textarea" name="message" placeholder="Tell us about your objectives..."></textarea>
+              <label class="form-label" for="f-msg">How can we help?</label>
+              <textarea class="form-textarea" id="f-msg" name="message" placeholder="Tell us about your objectives..."></textarea>
             </div>
-            <button type="submit" class="form-submit">Start the Conversation</button>
+            <button type="submit" class="form-submit" id="form-btn">Start the Conversation</button>
+            <p class="form-error" id="form-error" role="alert">Something went wrong sending your message. Please try again in a moment.</p>
           </form>
         </div>
       </div>
@@ -435,5 +461,34 @@
   </footer>
 
 </div>
+
+<script>
+  // Keep visitors on the page after submitting the contact form (Netlify Forms)
+  (function () {
+    var form = document.getElementById('contact-form');
+    if (!form || !window.fetch) return;
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var btn = document.getElementById('form-btn');
+      var err = document.getElementById('form-error');
+      err.style.display = 'none';
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(form)).toString()
+      }).then(function (res) {
+        if (!res.ok) throw new Error('Request failed');
+        form.style.display = 'none';
+        document.getElementById('contact-success').style.display = 'block';
+      }).catch(function () {
+        err.style.display = 'block';
+        btn.disabled = false;
+        btn.textContent = 'Start the Conversation';
+      });
+    });
+  })();
+</script>
 </body>
 </html>
